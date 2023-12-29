@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title></title>
+		<style>
+			@keyframes floatUp {
+				0% {
+					transform: translateY(300px);
+					opacity: 0.0;
+				}
+
+				100% {
+					opacity: 0.99;
+				}
+			}
+
+			@keyframes open {
+				0% {
+					transform: rotateY(0deg);
+					width: 0px;
+					opacity: 0.3;
+				}
+
+				100% {
+					transform: rotateY(180deg);
+					width: 1090px;
+					opacity: 1;
+				}
+			}
+
+			@keyframes sakura1 {
+				0% {
+					opacity: 0.3;
+					transform: rotateZ(0deg);
+				}
+
+				100% {
+					opacity: 0.8;
+					transform: rotateZ(60deg);
+					transform: translateY(90px);
+				}
+
+			}
+
+			@keyframes sakura2 {
+				0% {
+					opacity: 0.3;
+
+				}
+
+				100% {
+					opacity: 0.8;
+					transform: translateY(30px);
+					transform: translateX(10px);
+				}
+			}
+
+			@keyframes sakura3 {
+				0% {
+					opacity: 0.3;
+				}
+
+				100% {
+					opacity: 0.8;
+					transform: translateY(90px);
+					transform: translateX(30px);
+				}
+			}
+
+			body {
+				background-color: hotpink;
+				background-image:
+			}
+			
+		</style>
+		<link href="../CSS/character.css" rel="stylesheet" />
+		<link href="../CSS/default.css" rel="stylesheet" />
+		<link href="../CSS/animation.css" rel="stylesheet" />
+		<script>
+
+		</script>
+	</head>
+	<body>
+
+		<div id="box">
+			<div class="page p1"
+				style="background-image:url('../img/yoyoko_back.png'); background-size: 100%; position: relative;">
+
+				<div id="open_anime">
+					<div class="pic"
+						style="margin-top: 100px;display: grid;place-items: center; position: relative; left: 10px;">
+						<img src="../img/扇面.png"
+							style="height: 74vh; display ; animation:open 4s;animation-fill-mode: both;">
+					</div>
+					
+					<div>
+						<img src="../img/yoyoko_full.jpeg" /
+							style="position: absolute; width: 400px; top: 200px;left: 540px;animation-fill-mode: both;animation:floatUp 4s;">
+					</div>
+
+
+					<div class="sakuras">
+						<div class="sakura"
+							style="animation:sakura1 alternate infinite 5s;position: absolute;top:100px;left:100px"><img
+								src="../img/hanabira1.png" /></div>
+						<div class="sakura"
+							style="animation:sakura2 alternate infinite 4s;position: absolute;top:200px;right:500px">
+							<img src="../img/hanabira1.png" /></div>
+						<div class="sakura"
+							style="animation:sakura1 alternate infinite 2s;position: absolute;top:300px;right:400px">
+							<img src="../img/hanabira2.png" /></div>
+						<div class="sakura"
+							style="animation:sakura2 alternate infinite 6s;position: absolute;top:400px;right:100px">
+							<img src="../img/hanabira1.png" /></div>
+						<div class="sakura"
+							style="animation:sakura1 alternate infinite 3s;position: absolute;top:550px;left:600px"><img
+								src="../img/hanabira2.png" /></div>
+					</div>
+				</div>
+			</div>
+			<div class="page p2">
+				<table style="position: relative; top: 20%; left: 2%;">
+
+					<tr>
+						<td>姓名</td>
+						<td>西行寺幽幽子</td>
+					</tr>
+					<tr>
+						<td>日文名</td>
+						<td>西行寺　幽々子</td>
+					</tr>
+					<tr>
+						<td>英文名</td>
+						<td>Saigyouji Yuyuko</td>
+					</tr>
+					<tr>
+						<td>种族</td>
+						<td>亡灵</td>
+					</tr>
+					<tr>
+						<td>职业</td>
+						<td>管理冥界的幽灵</td>
+					</tr>
+					<tr>
+						<td>能力</td>
+						<td>操纵死亡程度的能力</td>
+					</tr>
+					<tr>
+						<td>介绍</td>
+						<td>
+							千年前就住在冥界白玉楼的亡灵少女，西行寺家的大小姐。冥界白玉楼的主人，幽雅的亡灵。
+
+							有着统率幽灵的能力，因此被阎魔任命为冥界幽灵的管理者，并且能永久居住于冥界。
+							生前就认识八云紫，和她是好友。
+
+							幽雅而充满和风元素的人物。弹幕多以樱、蝶和死亡为主题。
+						<td>
+					</tr>
+
+				</table>
+				<img src="../img/yoyoko_half.png"
+					style="float: right; width: 660px; bottom: 0; position:absolute; right: 0;" />
+				<div style="height: 100%; background-color: white;float:right; position: relative;">
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var openIt = document.getElementById("open_anime");
+		function open(){
+			openIt.className="dsply";
+		}
+	</script>
+</html>

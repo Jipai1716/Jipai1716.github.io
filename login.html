@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			@keyframes turn {
+				0% {
+					background-color: #C6E2FF;
+					color: aliceblue;
+				}
+
+				100% {
+					background-color: aliceblue;
+					color: #C6E2FF;
+				}
+			}
+
+			body {
+				background-color: #C6E2FF;
+			}
+
+			form {
+				width: 200px;
+			}
+
+			label {
+				display: inline-block;
+				line-height: 1.6;
+				margin-bottom: 10px;
+				user-select: none;
+			}
+
+			* {
+				color: white;
+				font-size: 20px;
+			}
+
+			input {
+				border-radius: 4px;
+				height: 1.3em;
+				border: solid white 2px;
+				background-color: transparent;
+				padding: 5px;
+				width: 195px;
+			}
+
+			input:focus {
+				background-color: aliceblue;
+				color: #C6E2FF;
+				animation: turn 0.7s -30ms;
+			}
+
+			button {
+				font-size: 20px;
+				color: aliceblue;
+				border: solid white 2px;
+				background-color: transparent;
+				border-radius: 4px;
+				padding: 2px;
+
+				margin: 0 10px;
+				cursor: pointer;
+				display: flex;
+			}
+
+			div {
+				justify-content: center;
+				display: flex;
+				width: 100%;
+			}
+		</style>
+
+<!-- 		<script>
+			var name = document.getElementById("name").value;
+			var pswd = document.getElementById("pswd").value;
+
+			function ii() {
+				window.alert("123");
+			}
+
+			function Login_indenify() {
+
+				if (name == "admin" && pswd == "12345") {
+					document.body.style.backgroundColor = "#aaff00";
+				} else {
+					document.bgColor = "#ff0000";
+				}
+			}
+		</script> -->
+	</head>
+	<body>
+	
+		<form>
+			<label>
+				账号
+				<br />
+				<input type="text" id="name" />
+			</label>
+			<br />
+			<label>
+				密码
+				<br />
+				<input type="password" id="pswd" />
+			</label>
+			<br />
+			<div>
+				<button >登录</button>
+				<button >注册</button>
+			</div>
+		</form>
+
+	</body>
+
+</html>

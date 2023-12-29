@@ -1,0 +1,416 @@
+<!DOCTYPE html<!--  -->>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" href="img/阴阳玉.png" />
+		<link href="CSS/default.css" rel="stylesheet" />
+		<title>东方音像馆</title>
+		<style>
+			@keyframes CoverCome {
+				0% {
+					transform: translateY(-300px);
+					opacity: 0;
+				}
+
+				100% {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+
+			@keyframes CoverGo {
+				0 {
+					opacity: 1;
+				}
+
+				100% {
+					transform: translateY(400px);
+					opacity: 0;
+				}
+			}
+
+			@keyframes turnBlue {
+				0% {
+					background-color: white;
+					color: skyblue;
+				}
+
+				100% {
+					background-color: skyblue;
+					color: white;
+				}
+			}
+
+			@keyframes turnPink {
+				0% {
+					background-color: white;
+					color: pink;
+				}
+
+				100% {
+					background-color: pink;
+					color: white;
+				}
+			}
+
+			@keyframes mawari {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			body {
+				margin: 0px;
+				/* background-image: linear-gradient(to bottom,#e0ffae 0%,transparent 40%); */
+				background-image: url("img/HanaBG.png");
+				background-size: 100%;
+				background-attachment: fixed;
+				cursor: pointer;
+			}
+
+			span.type {
+				list-style: none;
+				float: left;
+				width: 80px;
+				margin-left: 10px;
+				margin-bottom: -20px;
+				padding: 8px;
+				font-size: 1.3rem;
+				text-align: center;
+				color: palegreen;
+				font-weight: 700;
+				user-select: none;
+				border-left: 3px palegreen solid;
+			}
+
+			#player_head {
+				width: 90%;
+				height: 80px;
+				background-color: rgba(255, 255, 255, 0.9);
+				margin: 5% 5% 20px 5%;
+				border: #cccccc 3px double;
+				border-radius: 30px;
+			}
+
+			#player_area {
+
+				width: 90%;
+				margin: 0 5%;
+				background-color: rgba(238, 255, 253, 0.9);
+				height: auto;
+				border-radius: 30PX;
+				padding: 20px 0 20px 0;
+			}
+
+			#player_head ul {
+				width: auto;
+				float: left;
+				;
+			}
+
+			#player_head li {
+				list-style: none;
+				float: left;
+				width: 120px;
+				margin-left: 20px;
+				margin-bottom: -20px;
+				padding: 8px;
+				text-align: center;
+				border-radius: 10px;
+				user-select: none;
+				cursor: pointer;
+			}
+
+			#player_head ul:nth-child(1) {
+				color: skyblue;
+
+			}
+
+			#player_head ul:nth-child(1) li {
+				border: skyblue 2px solid;
+			}
+
+			#player_head ul:nth-child(1) li:hover {
+				background-color: skyblue;
+				color: white;
+				animation: turnBlue 0.7s;
+			}
+
+			#player_head ul:nth-child(2) li:hover {
+				color: white;
+				background-color: pink;
+				animation: turnPink 0.7s;
+			}
+
+			#player_head ul:nth-child(2) {
+				color: pink;
+			}
+
+			#player_head ul:nth-child(2) li {
+				border: pink 2px solid
+			}
+
+
+			.card {
+				width: 70vw;
+				height: 70vh;
+				background-color: #ffffff;
+				margin: auto;
+				position: relative;
+				border-radius: 30px;
+				box-shadow: darkgray 3px 3px 10px;
+			}
+
+			.music {}
+
+			#MusicCover {
+				border: black 2px solid;
+				height: 200px;
+				width: 200px;
+				margin: 0;
+				border-radius: 50%;
+				/* animation: mawari 10s infinite; */
+				position: absolute;
+				top: 5%;
+				left: 437.5px;
+				background-image: url('img/cover_de.jpeg');
+				background-size: 200px;
+				box-shadow: #666666 5px 5px 10px,
+					#666666 5px -5px 10px,
+					#666666 -5px -5px 10px,
+					#666666 -5px 5px 10px;
+			}
+
+			div#musicCtrl {
+				margin: 0;
+				width: 50%;
+				height: 40px;
+				background-color: aliceblue;
+				position: absolute;
+				left: 25%;
+				top: 60%;
+				justify-content: space-evenly;
+				display: flex;
+				border-radius: 40px;
+				box-shadow: #333333 3px 3px 10px;
+			}
+
+			div#musicCtrl div#playerbutton {
+				height: 30px;
+				width: 30px;
+				display: block;
+				margin: auto;
+				border-radius: 50%;
+				border: black 2px solid;
+				text-align: center;
+				font-size: 1.25rem;
+				color: #777777;
+				background-color: white;
+				user-select: none;
+				text-shadow: #aaaaaa 1px 1px 5px;
+				box-shadow: #aaaaaa 1px 1px 5px;
+
+
+			}
+
+			iframe {
+				display: none;
+				position: relative;
+				left: 220px;
+				top: 30px;
+			}
+
+			#nowplaying {
+				margin: 0;
+				width: 50%;
+				height: 40px;
+				position: absolute;
+				left: 25%;
+				top: 80%;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="head">
+			<label>
+				<a href="main.html">
+					<img src="img/阴阳玉.png" id="head_img" />
+					<div id="head_text" style="font-family" ;>东方音像馆</div>
+					<span id="head_list_buttom">
+						<ul>
+							<li><a href="blank.html">角色页面</a></li>
+							<li><a href="musicPlayer.html">音像馆</a></li>
+							
+						</ul>
+					</span>
+				</a>
+			</label>
+
+		</div>
+
+		<div id="player_head">
+			<span>
+				<ul>
+					<span class="type" onclick="changeCard(1)">音乐></span>
+					<li onclick=changeMusic(1);>綿雪の夢</li>
+					<li onclick=changeMusic(2);>Samsara</li>
+					<li onclick=changeMusic(3);>蓬莱伝説</li>
+				</ul>
+
+				<ul>
+					<span class="type" onclick="changeCard(2)">动画></span>
+					<li onclick="changViedo(1)">bad apple!!!</li>
+					<li onclick="changViedo(2)">地心闪星</li>
+					<li onclick="changViedo(3)">荆棘边界</li>
+				</ul>
+			</span>
+		</div>
+
+
+
+
+
+		<div id="player_area" class="">
+			<!-- card1 -->
+			<div id="frist_pic" class="card">
+				<img src="img/welcomeToYXG.jpg" style="float: right; height: 100%; border-radius:0 30px 30px 0;" />
+				<div style="position: absolute;">
+					<span id="welcome"
+						style="font-size: 80px; writing-mode: vertical-rl; margin: 40px 0px 20px 60px;font-family: '华文隶书';">东方音像馆</span>
+						
+				</div>
+			</div>
+			<!-- card2 -->
+			<div class="card" id="musicplayer" style="display: none;">
+				<div id="MusicCover"></div>
+				<br />
+				<audio id="player">你的浏览器不支持播放!</audio>
+				<div id="musicCtrl">
+					<div id="playerbutton" style="cursor: pointer;" onclick="playM()">▶</div>
+				</div>
+				<span id="nowplaying">请点选上方导航栏选择歌曲播放</span>
+
+			</div>
+
+
+			<div id="videoPlayer" class="card" style="display: none; position: relative;">
+				<img src="img/c3.png"
+					style="border-radius: 10px;box-shadow:#666 3px 3px 5px;border: 1px solid #fff;position: absolute;height: 60vh;width: 90vh; top: 30px; left: 220px;" />
+				<iframe id="V1" style="	height: 60vh;width: 90vh;;border-radius: 10px;"
+					src="//player.bilibili.com/player.html?aid=706&bvid=BV1xx411c79H&cid=3724723&p=1&autoplay=0">
+				</iframe>
+				<iframe id="V2" style="	height: 60vh;width: 90vh;;border-radius: 10px;"
+					src="//player.bilibili.com/player.html?aid=25926262&bvid=BV1os411575H&cid=44355001&p=1&autoplay=0">
+				</iframe>
+				<iframe id="V3" style="	height: 60vh;width: 90vh;;border-radius: 10px;"
+					src="//player.bilibili.com/player.html?aid=50745823&bvid=BV1r4411b7bG&cid=88846944&p=1&autoplay=0">
+				</iframe>
+
+			</div>
+		</div>
+
+	</body>
+
+	<script>
+		var thismusic = 0; //当前播放音乐
+		var playingStuates = 0; //播放状态
+
+		var ad = document.getElementById("player"); //播放器
+		var cvr = document.getElementById("MusicCover"); //封面
+		var icon = document.getElementById("playerbutton");
+		var ele = document.getElementById("nowplaying");
+
+
+		function changViedo(ind) {
+			changeCard(2);
+			var v1 = document.getElementById("V1");
+			var v2 = document.getElementById("V2");
+			var v3 = document.getElementById("V3");
+
+			if (ind == 1) {
+				v1.style.display = "flex";
+				v2.style.display = "none";
+				v3.style.display = "none";
+			}
+			if (ind == 2) {
+				v2.style.display = "flex";
+				v3.style.display = "none";
+				v1.style.display = "none";
+			}
+			if (ind == 3) {
+				v3.style.display = "flex";
+				v2.style.display = "none";
+				v1.style.display = "none";
+			}
+		}
+
+		function changeMusic(i) { //改变播放音乐函数
+			changeCard(1);
+			cvr.style.animation = "CoverCome 0.7s";
+			thismusic = i; //传参
+			if (thismusic == 1) {
+				// 更换封面
+				ele.innerHTML = "Crest - 綿雪の夢";
+				cvr.style.backgroundImage = "url('img/cv1.jpg')";
+				cvr.style.backgroundSize = "200px";
+				//载入音频
+				ad.src = "Music/Crest - 綿雪の夢.mp3";
+			}
+
+			if (thismusic == 2) {
+				ele.innerHTML = "GET IN THE RING - Samsara";
+				cvr.style.backgroundImage = "url('img/cv2.jpg')";
+				cvr.style.backgroundSize = "200px";
+				ad.src = "Music/GET IN THE RING - Samsara.mp3";
+			}
+
+			if (thismusic == 3) {
+				ele.innerHTML = "PHEVOTT - 蓬莱伝説";
+				cvr.style.backgroundImage = "url('img/cv3.jpg')";
+				cvr.style.backgroundSize = "200px";
+				ad.src = "Music/PHEVOTT - 蓬莱伝説.mp3";
+			}
+		}
+
+		function playM() { //播放暂停
+			if (thismusic != 0) {
+				if (ad.paused) {
+					ad.play();
+					cvr.style.animation = "mawari 10s infinite linear";
+					playingStuates = 1;
+					icon.innerHTML = "⏸";
+				} else {
+					ad.pause();
+					cvr.style.animationPlayState = "paused";
+					icon.innerHTML = "▶";
+					playingStuates = 0;
+				}
+			}
+		}
+
+		function changeCard(index) {
+			ad.pause();
+			var obj1, obj2, nowplaying;
+			nowplaying = document.getElementById("frist_pic");
+			obj1 = document.getElementById("musicplayer");
+			obj2 = document.getElementById("videoPlayer");
+			if (index == 1) {
+				nowplaying.style.display = "none";
+				obj2.style.display = "none";
+				obj1.style.display = "block";
+			}
+			if (index == 2) {
+				nowplaying.style.display = "none";
+				obj2.style.display = "block";
+				obj1.style.display = "none";
+			}
+
+		}
+	</script>
+</html>

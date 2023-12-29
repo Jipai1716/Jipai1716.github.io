@@ -1,0 +1,41 @@
+@keyframes FloatUp {
+	0% {
+		opacity: 0%;
+		transform: translateY(60px);
+
+	}
+
+	100% {
+		opacity: 100%;
+		transform: translateY(0px);
+	}
+}
+
+@keyframes left_FloatUp {
+	0% {
+		opacity: 0%;
+		transform: translateX(60px);
+		color: white;
+	}
+
+	100% {
+		opacity: 100%;
+		transform: translateX(0px);
+		color: white;
+	}
+}
+
+@keyframes floatUpAndDown {
+	0% {
+		transform: translateY(30px);
+	}
+
+	50% {
+		transform: translateY(-30px);
+	}
+
+	100% {
+
+		transform: translateY(30px);
+	}
+}

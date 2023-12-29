@@ -1,0 +1,79 @@
+table {
+	border-bottom: none;
+	border-collapse: collapse;
+	width: 60%;
+	float: left;
+	position: relative;
+}
+
+table tr {
+	border-bottom:white 3px solid;
+}
+
+#box {
+	height: 100vh;
+	width: 100vw;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+table td {
+	height: auto;
+	user-select: none;
+}
+
+table td:nth-child(1) {
+	text-align: center;
+	color: #eaeaea;
+	font-size: 16px;
+	width: 70px;
+	position: relative;
+	bottom: -10px;
+	left: -10px;
+}
+
+table td:nth-child(2) {
+	font-weight: 500;
+	font-size: 20px;
+	color: white;
+	width: 750px;
+	padding: 10PX;
+}
+
+::-webkit-scrollbar {
+	width: 1px;
+	height: 1px;
+}
+
+.page {
+	scroll-snap-align: start;
+	overflow: hidden;
+	height: 100vh;
+	position: relative;
+}
+
+#backToMemu {
+	background-color: rgba(120, 120, 120, 0.5);
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 1.25rem;
+	position: absolute;
+	bottom: 40px;
+	right: 40px;
+	box-shadow: #222222 1px 1px 5px,
+		#222222 -1px 1px 5px,
+		#222222 1px -1px 5px,
+		#222222 -1px -1px 5px;
+
+
+}
+
+#backToMemu img {
+	width: 50%;
+	height: 50%;
+	opacity: 0.5;
+	position: relative;
+	top: 25%;
+	left: 25%;
+}
